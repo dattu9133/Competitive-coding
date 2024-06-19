@@ -31,8 +31,7 @@ public class MaxSumOfDistinctSubArray {
       currSum += a[i];
       hm.put(a[i], hm.getOrDefault(a[i], 0) + 1);
     }
-    // System.out.println(currSum);
-    if ((hm.size() == k) && (maxSum < currSum)) {
+    if (hm.size() == k) {
       maxSum = currSum;
     }
 
@@ -47,11 +46,12 @@ public class MaxSumOfDistinctSubArray {
       }
       hm.put(a[i], hm.getOrDefault(a[i], 0) + 1);
       currSum += a[i];
-      // System.out.println(currSum);
+
       if ((hm.size() == k) && (maxSum < currSum)) {
         maxSum = currSum;
       }
     }
     return maxSum;
   }
+
 }
