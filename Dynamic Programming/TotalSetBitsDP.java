@@ -12,7 +12,7 @@ public class TotalSetBitsDP {
 
   private static int totalSetBitsDP(int num) {
     int[] dp = new int[num + 1];
-    int[] totalSetBits = new int[num + 1];
+    int sum = 0;
 
     for (int i = 1; i <= num; i++) {
       if (i % 2 == 0) {
@@ -20,9 +20,9 @@ public class TotalSetBitsDP {
       } else {
         dp[i] = dp[i - 1] + 1;
       }
-      totalSetBits[i] = totalSetBits[i - 1] + dp[i];
+      sum += dp[i];
     }
 
-    return totalSetBits[num];
+    return sum;
   }
 }
