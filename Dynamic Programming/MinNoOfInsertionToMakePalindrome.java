@@ -11,7 +11,7 @@ public class MinNoOfInsertionToMakePalindrome {
   }
 
   // DP + Tabulation
-  private static int findMinInsertions(String str) {
+  private static int findMinInsertionsT(String str) {
     int n = str.length();
     int[][] dp = new int[n][n];
     for (int gap = 1; gap < n; ++gap) {
@@ -28,56 +28,52 @@ public class MinNoOfInsertionToMakePalindrome {
   }
 
   // DP + LCS
-  // private static int findMinInsertions(String str) {
-  // String revStr = new StringBuilder(str).reverse().toString();
-  // int n = str.length();
-  // return n - LCS(str, revStr);
-  // }
+  private static int findMinInsertions(String str) {
+    String revStr = new StringBuilder(str).reverse().toString();
+    int n = str.length();
+    return n - LCS(str, revStr);
+  }
 
-  // private static int LCS(String a, String b) {
-  // int m = a.length();
-  // int n = b.length();
-  // int[][] dp = new int[m + 1][n + 1];
+  private static int LCS(String a, String b) {
+    int m = a.length();
+    int n = b.length();
+    int[][] dp = new int[m + 1][n + 1];
 
-  // for (int i = 0; i <= m; i++) {
-  // for (int j = 0; j <= n; j++) {
-  // if (i == 0 || j == 0) {
-  // dp[i][j] = 0;
-  // } else if (a.charAt(i - 1) == b.charAt(j - 1)) {
-  // dp[i][j] = dp[i - 1][j - 1] + 1;
-  // } else {
-  // dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
-  // }
-  // }
-  // }
+    for (int i = 0; i <= m; i++) {
+      for (int j = 0; j <= n; j++) {
+        if (i == 0 || j == 0) {
+          dp[i][j] = 0;
+        } else if (a.charAt(i - 1) == b.charAt(j - 1)) {
+          dp[i][j] = dp[i - 1][j - 1] + 1;
+        } else {
+          dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+        }
+      }
+    }
 
-  // return dp[m][n];
-  // }
+    return dp[m][n];
+  }
 
   // Recursion
-  // private static int findMinInsertions(char[] str, int l, int h) {
-  // // Base Cases
-  // if (l > h)
-  // return -1; // Invalid case
-  // if (l == h)
-  // return 0; // Single character is already a palindrome
-  // if (l == h - 1)
-  // return (str[l] == str[h]) ? 0 : 1; // Two characters, either they are same or
-  // different
+  private static int findMinInsertions(char[] str, int l, int h) {
+    // Base Cases
+    if (l > h)
+      return -1; // Invalid case
+    if (l == h)
+      return 0; // Single character is already a palindrome
+    if (l == h - 1)
+      return (str[l] == str[h]) ? 0 : 1; // Two characters, either they are same or different
 
-  // // Recursive Cases
-  // if (str[l] == str[h]) {
-  // return findMinInsertions(str, l + 1, h - 1);
-  // } else {
-  // // Insert a character at position h + 1 to match str[l]
-  // (findMinInsertions(str,
-  // // l + 1, h)).
+    // Recursive Cases
+    if (str[l] == str[h]) {
+      return findMinInsertions(str, l + 1, h - 1);
+    } else {
+      // Insert a character at position h + 1 to match str[l] (findMinInsertions(str,
+      // l + 1, h)).
 
-  // // Insert a character at position l - 1 to match str[h]
-  // (findMinInsertions(str,
-  // // l, h - 1)).
-  // return Math.min(findMinInsertions(str, l + 1, h), findMinInsertions(str, l, h
-  // - 1)) + 1;
-  // }
-  // }
+      // Insert a character at position l - 1 to match str[h] (findMinInsertions(str,
+      // l, h - 1)).
+      return Math.min(findMinInsertions(str, l + 1, h), findMinInsertions(str, l, h - 1)) + 1;
+    }
+  }
 }
