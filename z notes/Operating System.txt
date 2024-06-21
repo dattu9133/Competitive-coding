@@ -1,0 +1,23 @@
+What is Operating System and functions of it?
+Any software that controls hardware related to computer system is System software.
+Any software that controls hardware related to electronic system is Embedded software.
+
+OS is system software which controls all the hardware components of computer system when user working with computer system. OS provides an environment in computer system so that users can create and execute programs and can do some task in computer system. Through this Environment, OS acts as interface between user and Computer Hardware. Transfers users instructions to computer hardware and make different computer hardware work for user instructions.
+
+The following are functions of OS:
+1) Process management.
+2) Memory management.
+3) Disk management.
+4) Device Management.
+Above 4 are together called as resource management 
+5) Networking:
+	OS supports networking capabilities computer system like establishing and managing network connections, handling network protocols and sharing resources like printer in network.
+6) User Interface.
+7) Security:
+	OS provides secure environment policies and mechanisms like access controlling, encryption and decryption so that user data & information is secure in computer system.
+8) Job Accounting:
+	OS keeps track of time and resources used by different programs and different users.
+9) Performance monitoring:
+	OS provides tools for monitoring and optimising system performance.
+
+Why and How OS is called resource controller and resource manager?
