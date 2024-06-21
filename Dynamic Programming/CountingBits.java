@@ -6,10 +6,13 @@ public class CountingBits {
     System.out.println("Enter the number:");
     int num = sc.nextInt();
     int[] res = countBits(num);
-    System.out.println("Count of bits for each number from 0 to " + num + ":");
-    for (int i = 0; i <= num; i++) {
-      System.out.println("Number " + i + " has " + res[i] + " bits.");
+
+    System.out.print("[");
+    for (int i = 0; i < num; i++) {
+      System.out.print(res[i] + ", ");
     }
+    System.out.print(res[num] + "]");
+
     sc.close();
   }
 
