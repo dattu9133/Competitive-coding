@@ -11,6 +11,7 @@ public class MinNoOfInsertionToMakePalindrome {
   }
 
   // DP + Tabulation
+  @SuppressWarnings("unused")
   private static int findMinInsertionsT(String str) {
     int n = str.length();
     int[][] dp = new int[n][n];
@@ -55,6 +56,7 @@ public class MinNoOfInsertionToMakePalindrome {
   }
 
   // Recursion
+  @SuppressWarnings("unused")
   private static int findMinInsertions(char[] str, int l, int h) {
     // Base Cases
     if (l > h)
