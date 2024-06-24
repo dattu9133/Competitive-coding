@@ -3,6 +3,7 @@ Any software that controls hardware related to computer system is System softwar
 Any software that controls hardware related to electronic system is Embedded software.
 
 OS is system software which controls all the hardware components of computer system when user working with computer system. OS provides an environment in computer system so that users can create and execute programs and can do some task in computer system. Through this Environment, OS acts as interface between user and Computer Hardware. Transfers users instructions to computer hardware and make different computer hardware work for user instructions.
+OS is loaded into resident memory of RAM when it get booted.
 
 The following are functions of OS:
 1) Process management.
@@ -21,3 +22,30 @@ Above 4 are together called as resource management
 	OS provides tools for monitoring and optimising system performance.
 
 Why and How OS is called resource controller and resource manager?
+
+First OS is Batch OS.
+Second OS is Uni programming OS: 
+	In computer only one user works in computer and also executes only one program. 
+	ex: MSDOS, Windows 3.1 etc
+Third OS is Multi Programming OS: 
+	In computer only one user works in computer and also executes multiple programs.
+	ex: Windows 95,98,millium etc
+Fourth OS is Time Sharing OS: 
+    It is also multiprogramming OS but interactive multiprogramming OS
+    Multiple users can access multiple programs in single computer
+Multi processor OS:
+  >One user can execute multiple programs at a time by using multiple CPU's
+EX: Windows NT, Windows EP, Sandy Bridge, Veckton
+
+
+Shell is interacts with user. It has built in program called commands through which user interact with shell. Commands are also called as Utilities.
+Kernel is component which interacts with hardware and instructs the hardware to fulfil user need.
+System calls are built  in programs in OS which transfers information from shell to kernel and kernel to shell.
+
+What is difference b/w 32 bit and 64 bit CPU?
+
+In C:
+pointers, structures, arrays, string, macros
+OOPS concept:
+C++,Java
+Data Structures, OS, CN,SE,DBMS
