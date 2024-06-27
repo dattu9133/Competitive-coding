@@ -23,6 +23,7 @@ public class LargestSquareWithOnes {
     // Calling the function to find the maximum size square sub-matrix with all 1's
     int maxSquareArea = findMaximalSquare(A);
     System.out.println("The area of the maximum size square sub-matrix with all 1's is: " + maxSquareArea);
+    scanner.close();
   }
 
   public static int findMaximalSquare(int[][] matrix) {
@@ -50,6 +51,15 @@ public class LargestSquareWithOnes {
         // Update the maximum side length found so far
         maxSide = Math.max(maxSide, dp[i][j]);
       }
+    }
+
+    System.out.println();
+
+    for (int i = 0; i < N; i++) {
+      for (int j = 0; j < M; j++) {
+        System.out.print(dp[i][j] + " ");
+      }
+      System.out.println();
     }
 
     // The area of the largest square is side^2
