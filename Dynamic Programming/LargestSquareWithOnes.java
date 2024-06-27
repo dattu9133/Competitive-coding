@@ -53,14 +53,14 @@ public class LargestSquareWithOnes {
       }
     }
 
-    System.out.println();
+    // System.out.println();
 
-    for (int i = 0; i < N; i++) {
-      for (int j = 0; j < M; j++) {
-        System.out.print(dp[i][j] + " ");
-      }
-      System.out.println();
-    }
+    // for (int i = 0; i < N; i++) {
+    // for (int j = 0; j < M; j++) {
+    // System.out.print(dp[i][j] + " ");
+    // }
+    // System.out.println();
+    // }
 
     // The area of the largest square is side^2
     return maxSide * maxSide;
