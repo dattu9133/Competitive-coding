@@ -12,11 +12,10 @@ public class DepthFirstSearchWithAdjacencyList {
     int n = sc.nextInt();
 
     System.out.println("Enter Adjacency List:");
-    HashMap<Integer, ArrayList<Integer>> hm = new HashMap<>();
+    ArrayList<ArrayList<Integer>> hm = new ArrayList<>();
     for (int i = 0; i < n; i++) {
-      hm.put(i, new ArrayList<>());
+      hm.add(new ArrayList<>());
     }
-
     while (true) {
       System.out.println("Enter the vertices which has edge(-1 to break)");
       int u = sc.nextInt();
@@ -40,6 +39,18 @@ public class DepthFirstSearchWithAdjacencyList {
     sc.close();
   }
 
+  // Recursive DFS
+  private static void dfs(ArrayList<ArrayList<Integer>> hm, int start, boolean[] visited) {
+    System.out.print(start + " -> ");
+    visited[start] = true;
+    ArrayList<Integer> al = hm.get(start);
+    for (int i : al) {
+      if (!visited[i]) {
+        dfs(hm, i, visited);
+      }
+    }
+  }
+
   @SuppressWarnings("unused")
   // Iterative DFS without Recursion
   private static void dfs(int v, HashMap<Integer, ArrayList<Integer>> hm, int start, boolean[] visited) {
@@ -58,7 +69,8 @@ public class DepthFirstSearchWithAdjacencyList {
     }
   }
 
-  // Recursive DFS
+  // Recursive DFS using HashMap adjacency list
+  @SuppressWarnings("unused")
   private static void dfs(HashMap<Integer, ArrayList<Integer>> hm, int start, boolean[] visited) {
     visited[start] = true;
     System.out.print(start + " -> ");
