@@ -22,9 +22,9 @@ public class CoinsChange {
   }
 
   private static int minCoins(int[] coins, int n, int N) {
-    int count = 0;
+    // int count = 0;
     if (N == 0)
-      return new int[] { count, Integer.MAX_VALUE };
+      return Integer.MAX_VALUE;
     int dp[] = new int[N + 1];
     for (int i = 1; i <= N; i++) {
       dp[i] = Integer.MAX_VALUE;
