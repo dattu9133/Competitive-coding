@@ -1,5 +1,3 @@
-package Graph;
-
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -27,9 +25,10 @@ public class BreadthFirstSearch {
   private static void bfs(int v, int[][] edges, int start, boolean[] visited) {
     Queue<Integer> q = new LinkedList<>();
     q.add(start);
+    visited[start] = true;
+
     while (!q.isEmpty()) {
       int x = q.poll();
-      visited[x] = true;
       System.out.print(x + " -> ");
       for (int i = 0; i < v; i++) {
         if (!visited[i] && edges[x][i] == 1) {
