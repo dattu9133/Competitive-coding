@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class DetectCycleInGraph {
+class DetectCycleInGraphDFS {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
@@ -47,12 +47,15 @@ class DetectCycleInGraph {
     return false;
   }
 
-  private static boolean isCyclicDFS(int v, boolean[] visited, int parent, ArrayList<ArrayList<Integer>> adj) {
-    visited[v] = true;
+  // 4 2
+  // 1 2
+  // 2 3
+  private static boolean isCyclicDFS(int start, boolean[] visited, int parent, ArrayList<ArrayList<Integer>> adj) {
+    visited[start] = true;
 
-    for (int neighbor : adj.get(v)) {
+    for (int neighbor : adj.get(start)) {
       if (!visited[neighbor]) {
-        if (isCyclicDFS(neighbor, visited, v, adj)) {
+        if (isCyclicDFS(neighbor, visited, start, adj)) {
           return true;
         }
       } else if (neighbor != parent) {
