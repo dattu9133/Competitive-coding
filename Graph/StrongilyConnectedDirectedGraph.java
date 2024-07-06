@@ -56,6 +56,7 @@ public class StrongilyConnectedDirectedGraph {
     }
   }
 
+  @SuppressWarnings("unused")
   private static void dfs(HashMap<Integer, ArrayList<Integer>> hm, int n, int i, boolean[] visited) {
     visited[i] = true;
     for (int neighbor : hm.get(i)) {
